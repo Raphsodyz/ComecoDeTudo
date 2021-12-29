@@ -18,6 +18,9 @@ body{
 .align-right button{
   margin-right: 2px;
   margin-top: 10px;
+  top: 50%;
+  -ms-transform: translateY(-12%);
+  transform: translateY(-12%);
 }
 
 .cover{
@@ -69,7 +72,7 @@ label{
 }
 
 .footer-dark{
-  color: white;
+  color: #efe;
   background-color: #485461;
   background-image: linear-gradient(315deg, #515355 0%, #24282c 74%);
   font-size: 11.5px;
@@ -77,4 +80,39 @@ label{
   text-align: center;
   height: 50px;
   margin-top: 50px;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-title{
+  text-align: center;
+  font-family: 'Shizuru', cursive;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.modal-body{
+  margin: 0 auto;
+}
+
+.panel-title{
+  color: #efe;
+  background-color: #485461;
+  background-image: linear-gradient(315deg, #515355 0%, #24282c 74%);
+  height: 40px;
+}
+
+.panel-title h5{
+  font-family: 'PT Sans', sans-serif;
+  text-indent: 25px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 600px){
+
+  img{
+    width: 300px;
+  }
 }

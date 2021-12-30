@@ -35,7 +35,7 @@ body{
   height: 60px;
 }
 
-label{
+.form-label{
   display: block;
   font-size: 40px;
   font-family: 'Shizuru', cursive;
@@ -109,6 +109,32 @@ label{
   line-height: 40px;
   vertical-align: middle;
 }
+
+#arrow-btn{
+  font-size: 25px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  
+}
+
+.rotate{
+  transform: rotateX(-180deg);
+  transition: 300ms;
+}
+
+.form-group{
+  margin: 10px;
+}
+
+.form-check{
+  margin: 10px;
+}
+
+.form-check-label{
+  margin-right: 10px;
+}
+
 
 @media only screen and (max-width: 600px){
 

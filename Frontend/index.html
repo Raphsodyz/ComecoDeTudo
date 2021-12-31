@@ -57,9 +57,9 @@
           <input type="number" min="1" onkeypress="return event.charCode >= 48" class="form-control" id="quantidade" />
         </div>
         <div class="panel-title" id="modalQtd">
-          <h5>Acréscimos?<i class="fas fa-caret-up" id="arrow-btn" onclick="displayAbout()"></i></h5>
+          <h5>Acréscimos?<i class="fas fa-caret-up" id="arrow-btn" onclick="displayAddition()"></i></h5>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check form-check-inline" style="display: none;" id="additionLine1">
           <input class="form-check-input" type="checkbox" id="inlineCheckboxBacon" value="opcao1">
           <label class="form-check-label" for="inlineCheckboxBacon">Bacon R$:3,00</label>
           <input class="form-check-input" type="checkbox" id="inlineCheckboxCarne" value="opcao2">
@@ -67,7 +67,7 @@
           <input class="form-check-input" type="checkbox" id="inlineCheckboxQueijo" value="opcao2">
           <label class="form-check-label" for="inlineCheckboxQueijo">Queijo R$:1,50</label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check form-check-inline" style="display: none;" id="additionLine2">
           <input class="form-check-input" type="checkbox" id="inlineCheckboxFile" value="opcao1">
           <label class="form-check-label" for="inlineCheckboxFile">Filé R$:5,00</label>
           <input class="form-check-input" type="checkbox" id="inlineCheckboxPresunto" value="opcao1">
@@ -75,7 +75,7 @@
           <input class="form-check-input" type="checkbox" id="inlineCheckboxAbacaxi" value="opcao1">
           <label class="form-check-label" for="inlineCheckboxAbacaxi">Abacaxi R$:2,00</label>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check form-check-inline" style="display: none;" id="additionLine3">
           <input class="form-check-input" type="checkbox" id="inlineCheckboxFrango" value="opcao1">
           <label class="form-check-label" for="inlineCheckboxFrango">Frango desfiado R$:3,00</label>
         </div>

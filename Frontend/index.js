@@ -9,7 +9,17 @@ window.onload = function (){
     sanduicheModalBody.appendChild(sanduicheModalImage);
 }
 
-function displayAbout(){
+function displayAddition(){
+    
     var arrow = document.getElementById('arrow-btn');
     arrow.classList.toggle('rotate');
+    if(document.getElementById('additionLine1').style.display == "none"){
+        document.getElementById('additionLine1').style.display = "flex";
+        document.getElementById('additionLine2').style.display = "flex";
+        document.getElementById('additionLine3').style.display = "flex";
+    } else {
+        document.getElementById('additionLine1').style.display = "none";
+        document.getElementById('additionLine2').style.display = "none";
+        document.getElementById('additionLine3').style.display = "none";
+    }
 }

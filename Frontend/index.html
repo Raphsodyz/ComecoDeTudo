@@ -31,7 +31,7 @@
   <br></br>
   <div class="menu">
     <label for="classeSanduiche" class="form-label">Hamburguers</label>
-    <input class="form-control" id="classeSanduiche" />
+    <input class="form-control" id="classeSanduiche" style="display: none;"/>
   </div>
   <div class="modal fade" id="selectHamburguer" tabindex="-1" role="dialog" aria-labelledby="itemSelecionado"
     aria-hidden="true">
@@ -48,7 +48,7 @@
           <h5>Alguma observação sobre o pedido?</h5>
         </div>
         <div class="form-group">
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" maxlength="180"></textarea>
+          <textarea class="form-control" id="modalObsText" rows="3" maxlength="180"></textarea>
         </div>
         <div class="panel-title" id="modalQtd">
           <h5>Quantidade</h5>
@@ -64,24 +64,26 @@
           <label class="form-check-label" for="inlineCheckboxBacon">Bacon R$:3,00</label>
           <input class="form-check-input" type="checkbox" id="inlineCheckboxCarne" value="opcao2">
           <label class="form-check-label" for="inlineCheckboxCarne">Carne R$:2,00</label>
-          <input class="form-check-input" type="checkbox" id="inlineCheckboxQueijo" value="opcao2">
+          <input class="form-check-input" type="checkbox" id="inlineCheckboxQueijo" value="opcao3">
           <label class="form-check-label" for="inlineCheckboxQueijo">Queijo R$:1,50</label>
         </div>
         <div class="form-check form-check-inline" style="display: none;" id="additionLine2">
-          <input class="form-check-input" type="checkbox" id="inlineCheckboxFile" value="opcao1">
+          <input class="form-check-input" type="checkbox" id="inlineCheckboxFile" value="opcao4">
           <label class="form-check-label" for="inlineCheckboxFile">Filé R$:5,00</label>
-          <input class="form-check-input" type="checkbox" id="inlineCheckboxPresunto" value="opcao1">
+          <input class="form-check-input" type="checkbox" id="inlineCheckboxPresunto" value="opcao5">
           <label class="form-check-label" for="inlineCheckboxPresunto">Presunto R$:1,50</label>
-          <input class="form-check-input" type="checkbox" id="inlineCheckboxAbacaxi" value="opcao1">
+          <input class="form-check-input" type="checkbox" id="inlineCheckboxAbacaxi" value="opcao6">
           <label class="form-check-label" for="inlineCheckboxAbacaxi">Abacaxi R$:2,00</label>
         </div>
         <div class="form-check form-check-inline" style="display: none;" id="additionLine3">
-          <input class="form-check-input" type="checkbox" id="inlineCheckboxFrango" value="opcao1">
+          <input class="form-check-input" type="checkbox" id="inlineCheckboxFrango" value="opcao7">
           <label class="form-check-label" for="inlineCheckboxFrango">Frango desfiado R$:3,00</label>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-primary">Adicionar ao carrinho</button>
+          <button type="button" class="btn btn-primary">
+            Adicionar ao Carrinho <span class="badge badge-light">0</span>
+          </button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalButtonClose" onclick="modalClear()">Fechar</button>
         </div>
       </div>
     </div>
@@ -91,7 +93,7 @@
       <div class="card">
         <span class="border-top">
           <a href="#selectHamburguer" data-toggle="modal"><img class="card-img-top" src="./Produtos/lanche.jpg"
-              alt="Hamburguer" id="img-hamburguer"></a></span>
+              alt="Hamburguer" id="img-hamburguer1"></a></span>
         <div class="card-body">
           <p id="sanduicheTipo1" class="card-title">Hamburguer</p>
           <br>
@@ -103,9 +105,9 @@
       </div>
       <div class="card">
         <span class="border-top">
-          <img class="card-img-top" src="./Produtos/lanche.jpg" alt="X-Burguer"></span>
+          <a href="#selectHamburguer" data-toggle="modal"><img class="card-img-top" src="./Produtos/lanche.jpg" alt="X-Burguer" id="img-hamburguer2"></a></span>
         <div class="card-body">
-          <h5 class="card-title">X-Burguer</h5>
+          <p id="sanduicheTipo2" class="card-title">X-Burguer</p>
           <br>
           <p class="card-text">Pão de Hamburguer, queijo, presunto, 1 carne bovina, batata palha, milho, ervilha, tomate
             e alface.</p>
@@ -205,7 +207,7 @@
     <br></br>
     <div class="menu">
       <label for="classeBebida" class="form-label">Bebidas</label>
-      <input class="form-control" id="classeBebida">
+      <input class="form-control" id="classeBebida" style="display: none;">
     </div>
     <div class="card-group">
       <div class="card">

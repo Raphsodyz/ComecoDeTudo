@@ -39,11 +39,13 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="itemSelecionado"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" onclick="modalClear()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="modal-img"></div>
+        <div class="modal-body" id="modal-img">
+          <img id="sanduicheModalImage">
+        </div>
         <div class="panel-title" id="modalObs">
           <h5>Alguma observação sobre o pedido?</h5>
         </div>
@@ -92,8 +94,8 @@
     <div class="card-group">
       <div class="card">
         <span class="border-top">
-          <a href="#selectHamburguer" data-toggle="modal"><img class="card-img-top" src="./Produtos/lanche.jpg"
-              alt="Hamburguer" id="img-hamburguer1"></a></span>
+          <img class="card-img-top" href="#selectHamburguer" data-toggle="modal" src="./Produtos/lanche.jpg"
+            alt="Hamburguer" id="img-hamburguer1" onclick="selecionarSanduiche(1, 1)"></span>
         <div class="card-body">
           <p id="sanduicheTipo1" class="card-title">Hamburguer</p>
           <br>
@@ -105,7 +107,8 @@
       </div>
       <div class="card">
         <span class="border-top">
-          <a href="#selectHamburguer" data-toggle="modal"><img class="card-img-top" src="./Produtos/lanche.jpg" alt="X-Burguer" id="img-hamburguer2"></a></span>
+          <img class="card-img-top" href="#selectHamburguer" data-toggle="modal" src="./Produtos/lanche.jpg"
+            alt="X-Burguer" id="img-hamburguer2" onclick="selecionarSanduiche(2, 2)"></span>
         <div class="card-body">
           <p id="sanduicheTipo2" class="card-title">X-Burguer</p>
           <br>

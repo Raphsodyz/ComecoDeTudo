@@ -96,6 +96,10 @@ body{
   margin: 0 auto;
 }
 
+.card-img-top{
+  cursor: pointer;
+}
+
 .panel-title{
   color: #efe;
   background-color: #485461;

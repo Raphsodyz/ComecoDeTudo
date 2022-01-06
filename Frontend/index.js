@@ -1,14 +1,25 @@
 var sanduicheModalAddition = document.getElementsByClassName('form-check form-check-inline');
 
-function selecionarSanduiche(idSanduiche, idImage){
+function selecionarSanduiche(idSanduiche, idImageSanduiche){
 
     var sanduicheSelecionado = $('#sanduicheTipo' + idSanduiche).text();
-    document.getElementById('itemSelecionado').innerHTML = sanduicheSelecionado;
-    var sanduicheModalBody = document.querySelector(".modal-body");
+    document.getElementById('SanduicheSelecionado').innerHTML = sanduicheSelecionado;
+    var sanduicheModalBody = document.getElementById('modal-sanduiche-img');
     var sanduicheModalImage = document.getElementById('sanduicheModalImage');
     sanduicheModalImage.width = "450";
-    sanduicheModalImage.src = document.getElementById("img-hamburguer" + idImage).src;
+    sanduicheModalImage.src = document.getElementById("img-hamburguer" + idImageSanduiche).src;
     sanduicheModalBody.appendChild(sanduicheModalImage);
+}
+
+function selecionarBebida(idBebida, idImageBebida){
+    
+    var bebidaSelecionada = $('#bebidaTipo' + idBebida).text();
+    document.getElementById('BebidaSelecionada').innerHTML = bebidaSelecionada;
+    var bebidaModalBody = document.getElementById('modal-bebida-img');
+    var bebidaModalImage = document.getElementById('bebidaModalImage');
+    bebidaModalImage.width = "450";
+    bebidaModalImage.src = document.getElementById("img-bebida" + idImageBebida).src;
+    bebidaModalBody.appendChild(bebidaModalImage);
 }
 
 function displayAddition(){

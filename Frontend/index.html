@@ -33,17 +33,17 @@
     <label for="classeSanduiche" class="form-label">Hamburguers</label>
     <input class="form-control" id="classeSanduiche" style="display: none;"/>
   </div>
-  <div class="modal fade" id="selectHamburguer" tabindex="-1" role="dialog" aria-labelledby="itemSelecionado"
+  <div class="modal fade" id="selectHamburguer" tabindex="-1" role="dialog" aria-labelledby="SanduicheSelecionado"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="itemSelecionado"></h5>
+          <h5 class="modal-title" id="SanduicheSelecionado"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" onclick="modalClear()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="modal-img">
+        <div class="modal-body" id="modal-sanduiche-img">
           <img id="sanduicheModalImage">
         </div>
         <div class="panel-title" id="modalObs">
@@ -52,13 +52,13 @@
         <div class="form-group">
           <textarea class="form-control" id="modalObsText" rows="3" maxlength="180"></textarea>
         </div>
-        <div class="panel-title" id="modalQtd">
+        <div class="panel-title">
           <h5>Quantidade</h5>
         </div>
         <div class="form-group">
           <input type="number" min="1" onkeypress="return event.charCode >= 48" class="form-control" id="quantidade" />
         </div>
-        <div class="panel-title" id="modalQtd">
+        <div class="panel-title" id="modalAdd">
           <h5>Acréscimos?<i class="fas fa-caret-up" id="arrow-btn" onclick="displayAddition()"></i></h5>
         </div>
         <div class="form-check form-check-inline" style="display: none;" id="additionLine1">
@@ -86,6 +86,56 @@
             Adicionar ao Carrinho <span class="badge badge-light">0</span>
           </button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalButtonClose" onclick="modalClear()">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="selectBebida" tabindex="-1" role="dialog" aria-labelledby="BebidaSelecionada" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="BebidaSelecionada"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" onclick="modalClear()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modal-bebida-img">
+          <img id="bebidaModalImage">
+        </div>
+        <div class="panel-title">
+          <h5>Quantidade</h5>
+        </div>
+        <div class="form-group">
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Escolher...</option>
+            <option value="1">Lata</option>
+            <option value="2">600ml</option>
+            <option value="3">1L</option>
+            <option value="4">2L</option>
+          </select>
+        </div>
+        <div class="panel-title">
+          <h5>Sabor</h5>
+        </div>
+        <div class="form-group">
+          <select class="custom-select" id="inputGroupSelect02">
+            <option selected>Escolher...</option>
+            <option value="1">Coca-Cola</option>
+            <option value="2">Guaraná</option>
+            <option value="3">Fanta</option>
+          </select>
+        </div>
+        <div class="panel-title">
+            <h5>Quantos?</h5>
+        </div>
+        <div class="form-group">
+          <input type="number" min="1" onkeypress="return event.charCode >= 48" class="form-control" id="quantidade" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="modalClear()">Fechar</button>
+          <button type="button" class="btn btn-primary">
+            Adicionar ao Carrinho <span class="badge badge-light">0</span>
+          </button>
         </div>
       </div>
     </div>
@@ -120,9 +170,12 @@
         </div>
       </div>
       <div class="card">
-        <span class="border-top"><img class="card-img-top" src="./Produtos/lanche.jpg" alt="X-Bacon"></span>
+        <span class="border-top">
+          <img class="card-img-top" href="#selectHamburguer" data-toggle="modal" src="./Produtos/lanche.jpg"
+            alt="X-Bacon" id="img-hamburguer3" onclick="selecionarSanduiche(3, 3)"></span>
+        </span>
         <div class="card-body">
-          <h5 class="card-title">X-Bacon</h5>
+          <h5 id="sanduicheTipo3" class="card-title">X-Bacon</h5>
           <br>
           <p class="card-text">Pão de Hamburguer, queijo, presunto, 1 carne bovina, bacon, batata palha, milho, ervilha,
             tomate e alface.</p>
@@ -134,9 +187,12 @@
     </div>
     <div class="card-group">
       <div class="card">
-        <img class="card-img-top" src="./Produtos/lanche.jpg" alt="X-Egg">
+        <span class="border-top">
+          <img class="card-img-top" href="#selectHamburguer" data-toggle="modal" src="./Produtos/lanche.jpg"
+            alt="X-Egg" id="img-hamburguer4" onclick="selecionarSanduiche(4, 4)">
+        </span>
         <div class="card-body">
-          <h5 class="card-title">X-Egg</h5>
+          <h5 id="sanduicheTipo4" class="card-title">X-Egg</h5>
           <br>
           <p class="card-text">Pão de Hamburguer, queijo, presunto, 1 carne bovina, ovo, batata palha, milho, ervilha,
             tomate e alface.</p>
@@ -146,9 +202,12 @@
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="./Produtos/lanche.jpg" alt="X-Egg-Bacon">
+        <span class="border-top">
+          <img class="card-img-top" href="#selectHamburguer" data-toggle="modal" src="./Produtos/lanche.jpg"
+            alt="X-Egg-Bacon" id="img-hamburguer5" onclick="selecionarSanduiche(5, 5)">
+        </span>
         <div class="card-body">
-          <h5 class="card-title">X-Egg-Bacon</h5>
+          <h5 id="sanduicheTipo5" class="card-title">X-Egg-Bacon</h5>
           <br>
           <p class="card-text">Pão de Hamburguer, queijo, presunto, 1 carne bovina, bacon, ovo, batata palha, milho,
             ervilha, tomate e alface.</p>
@@ -158,9 +217,12 @@
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="./Produtos/lanche.jpg" alt="X-Filé">
+        <span class="border-top">
+          <img class="card-img-top" href="#selectHamburguer" data-toggle="modal" src="./Produtos/lanche.jpg"
+            alt="X-Filé" id="img-hamburguer6" onclick="selecionarSanduiche(6, 6)">
+        </span>
         <div class="card-body">
-          <h5 class="card-title">X-Filé</h5>
+          <h5 id="sanduicheTipo6" class="card-title">X-Filé</h5>
           <br>
           <p class="card-text">Pão de Hamburguer, queijo, presunto, 1 carne bovina, bacon, ovo, filé bovino em pedaços,
             batata palha, milho, ervilha, tomate e alface.</p>
@@ -172,9 +234,12 @@
     </div>
     <div class="card-group">
       <div class="card">
-        <img class="card-img-top" src="./Produtos/lanche.jpg" alt="X-Tudo">
+        <span class="border-top">
+          <img class="card-img-top" href="#selectHamburguer" data-toggle="modal" src="./Produtos/lanche.jpg"
+            alt="X-Tudo" id="img-hamburguer7" onclick="selecionarSanduiche(7, 7)">
+        </span>
         <div class="card-body">
-          <h5 class="card-title">X-Tudo</h5>
+          <h5 id="sanduicheTipo7" class="card-title">X-Tudo</h5>
           <br>
           <p class="card-text">Pão de Hamburguer, queijo, presunto, 2 carne bovina, bacon, ovo, frango desfiado, batata
             palha, milho, ervilha, tomate e alface.</p>
@@ -184,9 +249,12 @@
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="./Produtos/lanche.jpg" alt="Qualquer Um">
+        <span class="border-top">
+          <img class="card-img-top" href="#selectHamburguer" data-toggle="modal" src="./Produtos/lanche.jpg"
+            alt="Qualquer um" id="img-hamburguer8" onclick="selecionarSanduiche(8, 8)">
+        </span>
         <div class="card-body">
-          <h5 class="card-title">Qualquer um</h5>
+          <h5 id="sanduicheTipo8" class="card-title">Qualquer um</h5>
           <br>
           <p class="card-text">Pão de Hamburguer, queijo, presunto, 2 carne bovina, duplo bacon, ovo, frango desfiado,
             abacaxi, batata palha, milho, ervilha, tomate e alface.</p>
@@ -196,9 +264,12 @@
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="./Produtos/lanche.jpg" alt="Misto">
+        <span class="border-top">
+          <img class="card-img-top" href="#selectHamburguer" data-toggle="modal" src="./Produtos/lanche.jpg"
+            alt="Misto" id="img-hamburguer9" onclick="selecionarSanduiche(9, 9)">
+        </span>
         <div class="card-body">
-          <h5 class="card-title">Misto</h5>
+          <h5 id="sanduicheTipo9" class="card-title">Misto</h5>
           <br>
           <p class="card-text">Pão de misto, maionese, duplo queijo, duplo presunto.</p>
           <p class="card-text">
@@ -215,9 +286,11 @@
     <div class="card-group">
       <div class="card">
         <span class="border-top">
-          <img class="card-img-top" src="./Produtos/bebida.jpg" alt="X-Burguer"></span>
+            <img class="card-img-top" href="#selectBebida" data-toggle="modal" src="./Produtos/bebida.jpg"
+              alt="Refrigerantes" id="img-bebida1" onclick="selecionarBebida(1, 1)">
+          </span>
         <div class="card-body">
-          <h5 class="card-title">Refrigerantes</h5>
+          <h5 id="bebidaTipo1" class="card-title">Refrigerantes</h5>
           <br>
           <p class="card-text">Coca-Cola, Guaraná e Fanta.</p>
         </div>
